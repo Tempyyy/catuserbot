@@ -184,7 +184,7 @@ async def do_pm_options_action(event, chat):
     except AttributeError:
         PMMESSAGE_CACHE = {}
     if str(chat.id) not in PM_WARNS:
-        text = "__Select option from above message and wait. Don't spam my inbox, this is your last warning.__"
+        text = "⛔️ 𝗦𝗰𝗲𝗴𝗹𝗶 un messaggio o verrai 𝗕𝗹𝗼𝗰𝗰𝗮𝘁𝗼 𝗔𝘂𝘁𝗼𝗺𝗮𝘁𝗶𝗰𝗮𝗺𝗲𝗻𝘁𝗲 ⛔️"
         await event.reply(text)
         PM_WARNS[str(chat.id)] = 1
         sql.del_collection("pmwarns")
@@ -203,9 +203,9 @@ async def do_pm_options_action(event, chat):
         LOGS.info(str(e))
     sql.del_collection("pmmessagecache")
     sql.add_collection("pmmessagecache", PMMESSAGE_CACHE, {})
-    USER_BOT_WARN_ZERO = f"**If I remember correctly I mentioned in my previous message that this is not the right place for you to spam. \
-Though you ignored that message.So, I simply blocked you. \
-Now you can't do anything unless my master comes online and unblocks you.**"
+    USER_BOT_WARN_ZERO = f"ㅤㅤㅤ  ㅤㅤㅤ🚫 𝗕𝗟𝗢𝗖𝗖𝗔𝗧𝗢 🚫 \
+Sei stato 𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 𝗮𝘂𝘁𝗼𝗺𝗮𝘁𝗶𝗰𝗮𝗺𝗲𝗻𝘁𝗲, appena verrai 𝗻𝗼𝘁𝗮𝘁𝗼,  \
+se verrà ritenuto 𝙣𝙚𝙘𝙚𝙨𝙨𝙖𝙧𝙞𝙤, verrai 𝘀𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 e 𝗰𝗼𝗻𝘁𝗮𝘁𝘁𝗮𝘁𝗼, nel frattempo potresti finire di 𝗯𝗲𝗿𝗲 il tuo 𝘀𝘂𝗰𝗰𝗼, va bene? 🧃"
     await event.reply(USER_BOT_WARN_ZERO)
     await event.client(functions.contacts.BlockRequest(chat.id))
     the_message = f"#BLOCKED_PM\
@@ -231,10 +231,8 @@ async def do_pm_enquire_action(event, chat):
     except AttributeError:
         PMMESSAGE_CACHE = {}
     if str(chat.id) not in PM_WARNS:
-        text = """__Hey! Have some patience. My master has not seen your message yet. \
-My master usually responds to people, though idk about some exceptional users.__
-__My master will respond when he/she comes online, if he/she wants to.__
-**Please do not spam unless you wish to be blocked and reported.**"""
+        text = """🧘🏻‍♂️ 𝗦𝗶𝗶 𝗣𝗮𝘇𝗶𝗲𝗻𝘁𝗲, di solito 𝗿𝗶𝘀𝗽𝗼𝗻𝗱𝗼 entro 𝟭 𝗼𝗿𝗮, se è passato più tempo, beh 𝙥𝙧𝙤𝙗𝙖𝙗𝙞𝙡𝙢𝙚𝙣𝙩𝙚 è \
+qualcosa di 𝗶𝗺𝗽𝗼𝗿𝘁𝗮𝗻𝘁𝗲, non preoccuparti, ti risponderò il 𝙥𝙧𝙞𝙢𝙖 𝙥𝙤𝙨𝙨𝙞𝙗𝙞𝙡𝙚.\n\n⛔️ **Non spammare inutilmente o verrai Bloccato Automaticamente.** ⛔️"""
         await event.reply(text)
         PM_WARNS[str(chat.id)] = 1
         sql.del_collection("pmwarns")
@@ -253,9 +251,9 @@ __My master will respond when he/she comes online, if he/she wants to.__
         LOGS.info(str(e))
     sql.del_collection("pmmessagecache")
     sql.add_collection("pmmessagecache", PMMESSAGE_CACHE, {})
-    USER_BOT_WARN_ZERO = f"**If I remember correctly I mentioned in my previous message that this is not the right place for you to spam. \
-Though you ignored that message. So, I simply blocked you. \
-Now you can't do anything unless my master comes online and unblocks you.**"
+    USER_BOT_WARN_ZERO = f"ㅤㅤㅤ  ㅤㅤㅤ🚫 𝗕𝗟𝗢𝗖𝗖𝗔𝗧𝗢 🚫 \
+Sei stato 𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 𝗮𝘂𝘁𝗼𝗺𝗮𝘁𝗶𝗰𝗮𝗺𝗲𝗻𝘁𝗲, appena verrai 𝗻𝗼𝘁𝗮𝘁𝗼,  \
+se verrà ritenuto 𝙣𝙚𝙘𝙚𝙨𝙨𝙖𝙧𝙞𝙤, verrai 𝘀𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 e 𝗰𝗼𝗻𝘁𝗮𝘁𝘁𝗮𝘁𝗼, nel frattempo potresti finire di 𝗯𝗲𝗿𝗲 il tuo 𝘀𝘂𝗰𝗰𝗼, va bene? 🧃"
     await event.reply(USER_BOT_WARN_ZERO)
     await event.client(functions.contacts.BlockRequest(chat.id))
     the_message = f"#BLOCKED_PM\
@@ -281,10 +279,8 @@ async def do_pm_request_action(event, chat):
     except AttributeError:
         PMMESSAGE_CACHE = {}
     if str(chat.id) not in PM_WARNS:
-        text = """__Hey have some patience. My master has not seen your message yet. \
-My master usually responds to people, though idk about some exceptional users.__
-__My master will respond when he/she comes back online, if he/she wants to.__
-**Please do not spam unless you wish to be blocked and reported.**"""
+        text = """🧘🏻‍♂️ 𝗦𝗶𝗶 𝗣𝗮𝘇𝗶𝗲𝗻𝘁𝗲, di solito 𝗿𝗶𝘀𝗽𝗼𝗻𝗱𝗼 entro 𝟭 𝗼𝗿𝗮, se è passato più tempo, beh 𝙥𝙧𝙤𝙗𝙖𝙗𝙞𝙡𝙢𝙚𝙣𝙩𝙚 è \
+qualcosa di 𝗶𝗺𝗽𝗼𝗿𝘁𝗮𝗻𝘁𝗲, non preoccuparti, ti risponderò il 𝙥𝙧𝙞𝙢𝙖 𝙥𝙤𝙨𝙨𝙞𝙗𝙞𝙡𝙚.\n\n⛔️ **Non spammare inutilmente o verrai Bloccato Automaticamente.** ⛔️"""
         await event.reply(text)
         PM_WARNS[str(chat.id)] = 1
         sql.del_collection("pmwarns")
@@ -303,9 +299,9 @@ __My master will respond when he/she comes back online, if he/she wants to.__
         LOGS.info(str(e))
     sql.del_collection("pmmessagecache")
     sql.add_collection("pmmessagecache", PMMESSAGE_CACHE, {})
-    USER_BOT_WARN_ZERO = f"**If I remember correctly I mentioned in my previous message that this is not the right place for you to spam. \
-Though you ignored me and messaged me. So, i simply blocked you. \
-Now you can't do anything unless my master comes online and unblocks you.**"
+    USER_BOT_WARN_ZERO = f"ㅤㅤㅤ  ㅤㅤㅤ🚫 𝗕𝗟𝗢𝗖𝗖𝗔𝗧𝗢 🚫 \
+Sei stato 𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 𝗮𝘂𝘁𝗼𝗺𝗮𝘁𝗶𝗰𝗮𝗺𝗲𝗻𝘁𝗲, appena verrai 𝗻𝗼𝘁𝗮𝘁𝗼,  \
+se verrà ritenuto 𝙣𝙚𝙘𝙚𝙨𝙨𝙖𝙧𝙞𝙤, verrai 𝘀𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 e 𝗰𝗼𝗻𝘁𝗮𝘁𝘁𝗮𝘁𝗼, nel frattempo potresti finire di 𝗯𝗲𝗿𝗲 il tuo 𝘀𝘂𝗰𝗰𝗼, va bene? 🧃"
     await event.reply(USER_BOT_WARN_ZERO)
     await event.client(functions.contacts.BlockRequest(chat.id))
     the_message = f"#BLOCKED_PM\
@@ -331,10 +327,8 @@ async def do_pm_chat_action(event, chat):
     except AttributeError:
         PMMESSAGE_CACHE = {}
     if str(chat.id) not in PM_WARNS:
-        text = """__Heyy! I am busy right now I already asked you to wait know. After my work finishes. \
-We can talk but not right know. Hope you understand.__
-__My master will respond when he/she comes back online, if he/she wants to.__
-**Please do not spam unless you wish to be blocked and reported.**"""
+        text = """🧘🏻‍♂️ 𝗦𝗶𝗶 𝗣𝗮𝘇𝗶𝗲𝗻𝘁𝗲, di solito 𝗿𝗶𝘀𝗽𝗼𝗻𝗱𝗼 entro 𝟭 𝗼𝗿𝗮, se è passato più tempo, beh 𝙥𝙧𝙤𝙗𝙖𝙗𝙞𝙡𝙢𝙚𝙣𝙩𝙚 è \
+qualcosa di 𝗶𝗺𝗽𝗼𝗿𝘁𝗮𝗻𝘁𝗲, non preoccuparti, ti risponderò il 𝙥𝙧𝙞𝙢𝙖 𝙥𝙤𝙨𝙨𝙞𝙗𝙞𝙡𝙚.\n\n⛔️ **Non spammare inutilmente o verrai Bloccato Automaticamente.** ⛔️"""
         await event.reply(text)
         PM_WARNS[str(chat.id)] = 1
         sql.del_collection("pmwarns")
@@ -353,9 +347,9 @@ __My master will respond when he/she comes back online, if he/she wants to.__
         LOGS.info(str(e))
     sql.del_collection("pmmessagecache")
     sql.add_collection("pmmessagecache", PMMESSAGE_CACHE, {})
-    USER_BOT_WARN_ZERO = f"**If I remember correctly I mentioned in my previous message this is not the right place for you to spam. \
-Though you ignored that message. So, I simply blocked you. \
-Now you can't do anything unless my master comes online and unblocks you.**"
+    USER_BOT_WARN_ZERO = f"ㅤㅤㅤ  ㅤㅤㅤ🚫 𝗕𝗟𝗢𝗖𝗖𝗔𝗧𝗢 🚫 \
+Sei stato 𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 𝗮𝘂𝘁𝗼𝗺𝗮𝘁𝗶𝗰𝗮𝗺𝗲𝗻𝘁𝗲, appena verrai 𝗻𝗼𝘁𝗮𝘁𝗼,  \
+se verrà ritenuto 𝙣𝙚𝙘𝙚𝙨𝙨𝙖𝙧𝙞𝙤, verrai 𝘀𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 e 𝗰𝗼𝗻𝘁𝗮𝘁𝘁𝗮𝘁𝗼, nel frattempo potresti finire di 𝗯𝗲𝗿𝗲 il tuo 𝘀𝘂𝗰𝗰𝗼, va bene? 🧃"
     await event.reply(USER_BOT_WARN_ZERO)
     await event.client(functions.contacts.BlockRequest(chat.id))
     the_message = f"#BLOCKED_PM\
@@ -382,9 +376,9 @@ async def do_pm_spam_action(event, chat):
             del PMMESSAGE_CACHE[str(chat.id)]
     except Exception as e:
         LOGS.info(str(e))
-    USER_BOT_WARN_ZERO = f"**If I remember correctly I mentioned in my previous message this is not the right place for you to spam. \
-Though you ignored that message. So, I simply blocked you. \
-Now you can't do anything unless my master comes online and unblocks you.**"
+    USER_BOT_WARN_ZERO = f"ㅤㅤㅤ  ㅤㅤㅤ🚫 𝗕𝗟𝗢𝗖𝗖𝗔𝗧𝗢 🚫 \
+Sei stato 𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 𝗮𝘂𝘁𝗼𝗺𝗮𝘁𝗶𝗰𝗮𝗺𝗲𝗻𝘁𝗲, appena verrai 𝗻𝗼𝘁𝗮𝘁𝗼,  \
+se verrà ritenuto 𝙣𝙚𝙘𝙚𝙨𝙨𝙖𝙧𝙞𝙤, verrai 𝘀𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 e 𝗰𝗼𝗻𝘁𝗮𝘁𝘁𝗮𝘁𝗼, nel frattempo potresti finire di 𝗯𝗲𝗿𝗲 il tuo 𝘀𝘂𝗰𝗰𝗼, va bene? 🧃"
     await event.reply(USER_BOT_WARN_ZERO)
     await event.client(functions.contacts.BlockRequest(chat.id))
     the_message = f"#BLOCKED_PM\
@@ -480,17 +474,17 @@ async def on_plug_in_callback_query_handler(event):
     if event.query.user_id == event.client.uid:
         text = "Idoit these options are for users who messages you, not for you"
         return await event.answer(text, cache_time=0, alert=True)
-    text = f"""Ok, Now you are accessing the availabe menu of my master, {mention}.
-__Let's make this smooth and let me know why you are here.__
+    text = f"""Ecco la 𝗹𝗶𝘀𝘁𝗮 dei 𝗠𝗼𝘁𝗶𝘃𝗶 di {mention}.\n
+__Quale buon Vento ti porta qui Straniero?__
 
-**Choose one of the following reasons why you are here:**"""
+**Scegli il Motivo per il quale mi stai Contattando:**"""
     buttons = [
-        (Button.inline(text="To enquire something.", data="to_enquire_something"),),
-        (Button.inline(text="To request something.", data="to_request_something"),),
-        (Button.inline(text="To chat with my master.", data="to_chat_with_my_master"),),
+        (Button.inline(text="Ho bisogno di un'informazione", data="to_enquire_something"),),
+        (Button.inline(text="Ho una richiesta", data="to_request_something"),),
+        (Button.inline(text="Vorrei solo chiacchierare", data="to_chat_with_my_master"),),
         (
             Button.inline(
-                text="To spam my master's inbox.",
+                text="Voglio rompere i coglioni",
                 data="to_spam_my_master_inbox",
             ),
         ),
@@ -512,9 +506,8 @@ async def on_plug_in_callback_query_handler(event):
     if event.query.user_id == event.client.uid:
         text = "Idoit this options for user who messages you. not for you"
         return await event.answer(text, cache_time=0, alert=True)
-    text = """__Okay. Your request has been registered. Do not spam my master's inbox now. \
-My master is busy right now, When My master comes online he/she will check your message and ping you. \
-Then we can extend this conversation more but not right now.__"""
+    text = """📬 𝗩𝗮 𝗯𝗲𝗻𝗲, la tua richiesta è stata 𝗿𝗲𝗴𝗶𝘀𝘁𝗿𝗮𝘁𝗮, non scrivere più o verrai 𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 𝙖𝙪𝙩𝙤𝙢𝙖𝙩𝙞𝙘𝙖𝙢𝙚𝙣𝙩𝙚 \
+al momento sono 𝗼𝗰𝗰𝘂𝗽𝗮𝘁𝗼, appena sarò disponibile 𝘃𝗲𝗿𝗿𝗮𝗶 𝗰𝗼𝗻𝘁𝗮𝘁𝘁𝗮𝘁𝗼 e potrai dirmi ciò che vuoi.\n\n__Ovviamente qualcosa di sensato...__"""
     sqllist.add_to_list("pmenquire", event.query.user_id)
     try:
         PM_WARNS = sql.get_collection("pmwarns").json
@@ -533,10 +526,8 @@ async def on_plug_in_callback_query_handler(event):
     if event.query.user_id == event.client.uid:
         text = "Idoit this options for user who messages you. not for you"
         return await event.answer(text, cache_time=0, alert=True)
-    text = """__Okay. I have notified my master about this. When he/she comes comes online\
- or when my master is free he/she will look into this chat and will ping you so we can have a friendly chat.__\
-
-**But right now please do not spam unless you wish to get blocked.**"""
+    text = """📬 𝗩𝗮 𝗯𝗲𝗻𝗲, la tua richiesta è stata 𝗿𝗲𝗴𝗶𝘀𝘁𝗿𝗮𝘁𝗮, non scrivere più o verrai 𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 𝙖𝙪𝙩𝙤𝙢𝙖𝙩𝙞𝙘𝙖𝙢𝙚𝙣𝙩𝙚 \
+al momento sono 𝗼𝗰𝗰𝘂𝗽𝗮𝘁𝗼, appena sarò disponibile 𝘃𝗲𝗿𝗿𝗮𝗶 𝗰𝗼𝗻𝘁𝗮𝘁𝘁𝗮𝘁𝗼 e potrai dirmi ciò che vuoi.\n\n__Ovviamente qualcosa di sensato...__"""
     sqllist.add_to_list("pmrequest", event.query.user_id)
     try:
         PM_WARNS = sql.get_collection("pmwarns").json
@@ -553,10 +544,10 @@ async def on_plug_in_callback_query_handler(event):
 @catub.tgbot.on(CallbackQuery(data=re.compile(rb"to_chat_with_my_master")))
 async def on_plug_in_callback_query_handler(event):
     if event.query.user_id == event.client.uid:
-        text = "Idoit these options are for users who message you. not for you"
+        text = "Coglione queste opzioni non sono per te, sono per chi ti scrive."
         return await event.answer(text, cache_time=0, alert=True)
-    text = """__Yaa sure we can have a friendly chat but not right now. we can have this\
-some other time. Right now I am a little busy. when I come online and if I am free. I will ping you ,this is Damm sure.__"""
+    text = """📬 𝗩𝗮 𝗯𝗲𝗻𝗲, la tua richiesta è stata 𝗿𝗲𝗴𝗶𝘀𝘁𝗿𝗮𝘁𝗮, non scrivere più o verrai 𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 𝙖𝙪𝙩𝙤𝙢𝙖𝙩𝙞𝙘𝙖𝙢𝙚𝙣𝙩𝙚 \
+al momento sono 𝗼𝗰𝗰𝘂𝗽𝗮𝘁𝗼, appena sarò disponibile 𝘃𝗲𝗿𝗿𝗮𝗶 𝗰𝗼𝗻𝘁𝗮𝘁𝘁𝗮𝘁𝗼 e potrai dirmi ciò che vuoi.\n\n__Ovviamente qualcosa di sensato...__"""
     sqllist.add_to_list("pmchat", event.query.user_id)
     try:
         PM_WARNS = sql.get_collection("pmwarns").json
@@ -573,7 +564,7 @@ some other time. Right now I am a little busy. when I come online and if I am fr
 @catub.tgbot.on(CallbackQuery(data=re.compile(rb"to_spam_my_master_inbox")))
 async def on_plug_in_callback_query_handler(event):
     if event.query.user_id == event.client.uid:
-        text = "Idoit these options are for users who message you. not for you"
+        text = "Coglione queste opzioni non sono per te, sono per chi ti scrive."
         return await event.answer(text, cache_time=0, alert=True)
     text = "`███████▄▄███████████▄\
          \n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\
@@ -588,8 +579,8 @@ async def on_plug_in_callback_query_handler(event):
          \n░░░░░░░░░░░█░░█\
          \n░░░░░░░░░░░█░░█\
          \n░░░░░░░░░░░░▀▀`\
-         \n**So uncool, this is not your home. Go bother somewhere else.\
-         \n\nAnd this is your last warning if you send one more message you will be blocked automatically.**"
+         \n**Ma dove credi di essere, vai a rompere i coglioni a qualcun'altro.\
+         \n\nAl prossimo messaggio verrai bloccato.**"
     sqllist.add_to_list("pmspam", event.query.user_id)
     try:
         PM_WARNS = sql.get_collection("pmspam").json
@@ -690,7 +681,7 @@ async def approve_p_m(event):  # sourcery no-metrics
         if not user:
             return
     if not reason:
-        reason = "Not mentioned"
+        reason = "Nessuno"
     try:
         PM_WARNS = sql.get_collection("pmwarns").json
     except AttributeError:
@@ -715,7 +706,7 @@ async def approve_p_m(event):  # sourcery no-metrics
             sqllist.rm_from_list("pmoptions", chat.id)
         await edit_delete(
             event,
-            f"__Approved to pm__ [{user.first_name}](tg://user?id={user.id})\n**Reason :** __{reason}__",
+            f"✅ [{user.first_name}](tg://user?id={user.id}) la tua 𝗿𝗶𝗰𝗵𝗶𝗲𝘀𝘁𝗮 è stata 𝗮𝗽𝗽𝗿𝗼𝘃𝗮𝘁𝗮 ✅",
         )
         try:
             PMMESSAGE_CACHE = sql.get_collection("pmmessagecache").json
@@ -736,7 +727,7 @@ async def approve_p_m(event):  # sourcery no-metrics
     else:
         await edit_delete(
             event,
-            f"[{user.first_name}](tg://user?id={user.id}) __is already in approved list__",
+            f"✅ [{user.first_name}](tg://user?id={user.id}) è 𝗴𝗶𝗮' 𝗮𝗽𝗽𝗿𝗼𝘃𝗮𝘁𝗼 ✅",
         )
 
 
@@ -777,17 +768,17 @@ async def disapprove_p_m(event):
             event, "__Ok! I have disapproved everyone successfully.__"
         )
     if not reason:
-        reason = "Not Mentioned."
+        reason = "Nessuno."
     if pmpermit_sql.is_approved(user.id):
         pmpermit_sql.disapprove(user.id)
         await edit_or_reply(
             event,
-            f"[{user.first_name}](tg://user?id={user.id}) __is disapproved to personal message me.__\n**Reason:**__ {reason}__",
+            f"🚫 [{user.first_name}](tg://user?id={user.id}) la tua 𝗿𝗶𝗰𝗵𝗶𝗲𝘀𝘁𝗮 𝙣𝙤𝙣 è stata 𝗮𝗽𝗽𝗿𝗼𝘃𝗮𝘁𝗮 🚫\nㅤ\n𝗠𝗼𝘁𝗶𝘃𝗼:__ {reason}__",
         )
     else:
         await edit_delete(
             event,
-            f"[{user.first_name}](tg://user?id={user.id}) __is not yet approved__",
+            f"⚠️ [{user.first_name}](tg://user?id={user.id}) 𝙣𝙤𝙣 è 𝗮𝗽𝗽𝗿𝗼𝘃𝗮𝘁𝗼 ⚠️",
         )
 
 
@@ -817,7 +808,7 @@ async def block_p_m(event):
         if not user:
             return
     if not reason:
-        reason = "Not Mentioned."
+        reason = "Nessuno."
     try:
         PM_WARNS = sql.get_collection("pmwarns").json
     except AttributeError:
@@ -873,7 +864,7 @@ async def unblock_pm(event):
         if not user:
             return
     if not reason:
-        reason = "Not Mentioned."
+        reason = "Nessuno."
     await event.client(functions.contacts.UnblockRequest(user.id))
     await event.edit(
         f"[{user.first_name}](tg://user?id={user.id}) __is unblocked he/she can personal message you from now on.__\n**Reason:** __{reason}__"
