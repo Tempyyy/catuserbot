@@ -232,8 +232,12 @@ async def do_pm_enquire_action(event, chat):
     except AttributeError:
         PMMESSAGE_CACHE = {}
     if str(chat.id) not in PM_WARNS:
-        text = """🧘🏻‍♂️ 𝗦𝗶𝗶 𝗣𝗮𝘇𝗶𝗲𝗻𝘁𝗲, di solito 𝗿𝗶𝘀𝗽𝗼𝗻𝗱𝗼 entro 𝟭 𝗼𝗿𝗮, se è passato più tempo, beh 𝙥𝙧𝙤𝙗𝙖𝙗𝙞𝙡𝙢𝙚𝙣𝙩𝙚 è \
-qualcosa di 𝗶𝗺𝗽𝗼𝗿𝘁𝗮𝗻𝘁𝗲, non preoccuparti, ti risponderò il 𝙥𝙧𝙞𝙢𝙖 𝙥𝙤𝙨𝙨𝙞𝙗𝙞𝙡𝙚.\n\n⛔️ **Non spammare inutilmente o verrai Bloccato Automaticamente.** ⛔️"""
+        text = """🧘🏻‍♂️ 𝗦𝗶𝗶 𝗣𝗮𝘇𝗶𝗲𝗻𝘁𝗲, di solito 𝗿𝗶𝘀𝗽𝗼𝗻𝗱𝗼 entro 𝟭 𝗼𝗿𝗮, \
+se è passato più tempo, beh 𝙥𝙧𝙤𝙗𝙖𝙗𝙞𝙡𝙢𝙚𝙣𝙩𝙚 è \
+qualcosa di 𝗶𝗺𝗽𝗼𝗿𝘁𝗮𝗻𝘁𝗲, non preoccuparti, \
+ti risponderò il 𝙥𝙧𝙞𝙢𝙖 𝙥𝙤𝙨𝙨𝙞𝙗𝙞𝙡𝙚. \
+\n\n⛔️ **Non spammare inutilmente o verrai \
+Bloccato Automaticamente.** ⛔️"""
         await event.reply(text)
         PM_WARNS[str(chat.id)] = 1
         sql.del_collection("pmwarns")
@@ -254,7 +258,8 @@ qualcosa di 𝗶𝗺𝗽𝗼𝗿𝘁𝗮𝗻𝘁𝗲, non preoccuparti, ti rispo
     sql.add_collection("pmmessagecache", PMMESSAGE_CACHE, {})
     USER_BOT_WARN_ZERO = f"ㅤㅤㅤ  ㅤㅤㅤ🚫 𝗕𝗟𝗢𝗖𝗖𝗔𝗧𝗢 🚫 \
 Sei stato 𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 𝗮𝘂𝘁𝗼𝗺𝗮𝘁𝗶𝗰𝗮𝗺𝗲𝗻𝘁𝗲, appena verrai 𝗻𝗼𝘁𝗮𝘁𝗼,  \
-se verrà ritenuto 𝙣𝙚𝙘𝙚𝙨𝙨𝙖𝙧𝙞𝙤, verrai 𝘀𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 e 𝗰𝗼𝗻𝘁𝗮𝘁𝘁𝗮𝘁𝗼, nel frattempo potresti finire di 𝗯𝗲𝗿𝗲 il tuo 𝘀𝘂𝗰𝗰𝗼, va bene? 🧃"
+se verrà ritenuto 𝙣𝙚𝙘𝙚𝙨𝙨𝙖𝙧𝙞𝙤, verrai 𝘀𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 e 𝗰𝗼𝗻𝘁𝗮𝘁𝘁𝗮𝘁𝗼, \ 
+nel frattempo potresti finire di 𝗯𝗲𝗿𝗲 il tuo 𝘀𝘂𝗰𝗰𝗼, va bene? 🧃"
     await event.reply(USER_BOT_WARN_ZERO)
     await event.client(functions.contacts.BlockRequest(chat.id))
     the_message = f"#BLOCKED_PM\
@@ -280,8 +285,12 @@ async def do_pm_request_action(event, chat):
     except AttributeError:
         PMMESSAGE_CACHE = {}
     if str(chat.id) not in PM_WARNS:
-        text = """🧘🏻‍♂️ 𝗦𝗶𝗶 𝗣𝗮𝘇𝗶𝗲𝗻𝘁𝗲, di solito 𝗿𝗶𝘀𝗽𝗼𝗻𝗱𝗼 entro 𝟭 𝗼𝗿𝗮, se è passato più tempo, beh 𝙥𝙧𝙤𝙗𝙖𝙗𝙞𝙡𝙢𝙚𝙣𝙩𝙚 è \
-qualcosa di 𝗶𝗺𝗽𝗼𝗿𝘁𝗮𝗻𝘁𝗲, non preoccuparti, ti risponderò il 𝙥𝙧𝙞𝙢𝙖 𝙥𝙤𝙨𝙨𝙞𝙗𝙞𝙡𝙚.\n\n⛔️ **Non spammare inutilmente o verrai Bloccato Automaticamente.** ⛔️"""
+        text = """🧘🏻‍♂️ 𝗦𝗶𝗶 𝗣𝗮𝘇𝗶𝗲𝗻𝘁𝗲, di solito 𝗿𝗶𝘀𝗽𝗼𝗻𝗱𝗼 entro 𝟭 𝗼𝗿𝗮, \
+se è passato più tempo, beh 𝙥𝙧𝙤𝙗𝙖𝙗𝙞𝙡𝙢𝙚𝙣𝙩𝙚 è \
+qualcosa di 𝗶𝗺𝗽𝗼𝗿𝘁𝗮𝗻𝘁𝗲, non preoccuparti, \
+ti risponderò il 𝙥𝙧𝙞𝙢𝙖 𝙥𝙤𝙨𝙨𝙞𝙗𝙞𝙡𝙚. \
+\n\n⛔️ **Non spammare inutilmente o verrai \
+Bloccato Automaticamente.** ⛔️"""
         await event.reply(text)
         PM_WARNS[str(chat.id)] = 1
         sql.del_collection("pmwarns")
@@ -302,7 +311,8 @@ qualcosa di 𝗶𝗺𝗽𝗼𝗿𝘁𝗮𝗻𝘁𝗲, non preoccuparti, ti rispo
     sql.add_collection("pmmessagecache", PMMESSAGE_CACHE, {})
     USER_BOT_WARN_ZERO = f"ㅤㅤㅤ  ㅤㅤㅤ🚫 𝗕𝗟𝗢𝗖𝗖𝗔𝗧𝗢 🚫 \
 Sei stato 𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 𝗮𝘂𝘁𝗼𝗺𝗮𝘁𝗶𝗰𝗮𝗺𝗲𝗻𝘁𝗲, appena verrai 𝗻𝗼𝘁𝗮𝘁𝗼,  \
-se verrà ritenuto 𝙣𝙚𝙘𝙚𝙨𝙨𝙖𝙧𝙞𝙤, verrai 𝘀𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 e 𝗰𝗼𝗻𝘁𝗮𝘁𝘁𝗮𝘁𝗼, nel frattempo potresti finire di 𝗯𝗲𝗿𝗲 il tuo 𝘀𝘂𝗰𝗰𝗼, va bene? 🧃"
+se verrà ritenuto 𝙣𝙚𝙘𝙚𝙨𝙨𝙖𝙧𝙞𝙤, verrai 𝘀𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 e 𝗰𝗼𝗻𝘁𝗮𝘁𝘁𝗮𝘁𝗼, \ 
+nel frattempo potresti finire di 𝗯𝗲𝗿𝗲 il tuo 𝘀𝘂𝗰𝗰𝗼, va bene? 🧃"
     await event.reply(USER_BOT_WARN_ZERO)
     await event.client(functions.contacts.BlockRequest(chat.id))
     the_message = f"#BLOCKED_PM\
@@ -328,8 +338,12 @@ async def do_pm_chat_action(event, chat):
     except AttributeError:
         PMMESSAGE_CACHE = {}
     if str(chat.id) not in PM_WARNS:
-        text = """🧘🏻‍♂️ 𝗦𝗶𝗶 𝗣𝗮𝘇𝗶𝗲𝗻𝘁𝗲, di solito 𝗿𝗶𝘀𝗽𝗼𝗻𝗱𝗼 entro 𝟭 𝗼𝗿𝗮, se è passato più tempo, beh 𝙥𝙧𝙤𝙗𝙖𝙗𝙞𝙡𝙢𝙚𝙣𝙩𝙚 è \
-qualcosa di 𝗶𝗺𝗽𝗼𝗿𝘁𝗮𝗻𝘁𝗲, non preoccuparti, ti risponderò il 𝙥𝙧𝙞𝙢𝙖 𝙥𝙤𝙨𝙨𝙞𝙗𝙞𝙡𝙚.\n\n⛔️ **Non spammare inutilmente o verrai Bloccato Automaticamente.** ⛔️"""
+        text = """🧘🏻‍♂️ 𝗦𝗶𝗶 𝗣𝗮𝘇𝗶𝗲𝗻𝘁𝗲, di solito 𝗿𝗶𝘀𝗽𝗼𝗻𝗱𝗼 entro 𝟭 𝗼𝗿𝗮, \
+se è passato più tempo, beh 𝙥𝙧𝙤𝙗𝙖𝙗𝙞𝙡𝙢𝙚𝙣𝙩𝙚 è \
+qualcosa di 𝗶𝗺𝗽𝗼𝗿𝘁𝗮𝗻𝘁𝗲, non preoccuparti, \
+ti risponderò il 𝙥𝙧𝙞𝙢𝙖 𝙥𝙤𝙨𝙨𝙞𝙗𝙞𝙡𝙚. \
+\n\n⛔️ **Non spammare inutilmente o verrai \
+Bloccato Automaticamente.** ⛔️"""
         await event.reply(text)
         PM_WARNS[str(chat.id)] = 1
         sql.del_collection("pmwarns")
@@ -350,7 +364,8 @@ qualcosa di 𝗶𝗺𝗽𝗼𝗿𝘁𝗮𝗻𝘁𝗲, non preoccuparti, ti rispo
     sql.add_collection("pmmessagecache", PMMESSAGE_CACHE, {})
     USER_BOT_WARN_ZERO = f"ㅤㅤㅤ  ㅤㅤㅤ🚫 𝗕𝗟𝗢𝗖𝗖𝗔𝗧𝗢 🚫 \
 Sei stato 𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 𝗮𝘂𝘁𝗼𝗺𝗮𝘁𝗶𝗰𝗮𝗺𝗲𝗻𝘁𝗲, appena verrai 𝗻𝗼𝘁𝗮𝘁𝗼,  \
-se verrà ritenuto 𝙣𝙚𝙘𝙚𝙨𝙨𝙖𝙧𝙞𝙤, verrai 𝘀𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 e 𝗰𝗼𝗻𝘁𝗮𝘁𝘁𝗮𝘁𝗼, nel frattempo potresti finire di 𝗯𝗲𝗿𝗲 il tuo 𝘀𝘂𝗰𝗰𝗼, va bene? 🧃"
+se verrà ritenuto 𝙣𝙚𝙘𝙚𝙨𝙨𝙖𝙧𝙞𝙤, verrai 𝘀𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 e 𝗰𝗼𝗻𝘁𝗮𝘁𝘁𝗮𝘁𝗼, \ 
+nel frattempo potresti finire di 𝗯𝗲𝗿𝗲 il tuo 𝘀𝘂𝗰𝗰𝗼, va bene? 🧃"
     await event.reply(USER_BOT_WARN_ZERO)
     await event.client(functions.contacts.BlockRequest(chat.id))
     the_message = f"#BLOCKED_PM\
@@ -379,7 +394,8 @@ async def do_pm_spam_action(event, chat):
         LOGS.info(str(e))
     USER_BOT_WARN_ZERO = f"ㅤㅤㅤ  ㅤㅤㅤ🚫 𝗕𝗟𝗢𝗖𝗖𝗔𝗧𝗢 🚫 \
 Sei stato 𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 𝗮𝘂𝘁𝗼𝗺𝗮𝘁𝗶𝗰𝗮𝗺𝗲𝗻𝘁𝗲, appena verrai 𝗻𝗼𝘁𝗮𝘁𝗼,  \
-se verrà ritenuto 𝙣𝙚𝙘𝙚𝙨𝙨𝙖𝙧𝙞𝙤, verrai 𝘀𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 e 𝗰𝗼𝗻𝘁𝗮𝘁𝘁𝗮𝘁𝗼, nel frattempo potresti finire di 𝗯𝗲𝗿𝗲 il tuo 𝘀𝘂𝗰𝗰𝗼, va bene? 🧃"
+se verrà ritenuto 𝙣𝙚𝙘𝙚𝙨𝙨𝙖𝙧𝙞𝙤, verrai 𝘀𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 e 𝗰𝗼𝗻𝘁𝗮𝘁𝘁𝗮𝘁𝗼, \ 
+nel frattempo potresti finire di 𝗯𝗲𝗿𝗲 il tuo 𝘀𝘂𝗰𝗰𝗼, va bene? 🧃"
     await event.reply(USER_BOT_WARN_ZERO)
     await event.client(functions.contacts.BlockRequest(chat.id))
     the_message = f"#BLOCKED_PM\
@@ -478,7 +494,8 @@ async def on_plug_in_callback_query_handler(event):
     text = f"""Ecco la 𝗹𝗶𝘀𝘁𝗮 dei 𝗠𝗼𝘁𝗶𝘃𝗶 di {mention}.\n
 __Quale buon Vento ti porta qui Straniero?__
 
-**Scegli il Motivo per il quale mi stai Contattando:**"""
+**Scegli il Motivo per il quale \
+mi stai Contattando:**"""
     buttons = [
         (Button.inline(text="Ho bisogno di un'informazione", data="to_enquire_something"),),
         (Button.inline(text="Ho una richiesta", data="to_request_something"),),
@@ -507,8 +524,12 @@ async def on_plug_in_callback_query_handler(event):
     if event.query.user_id == event.client.uid:
         text = "Idoit this options for user who messages you. not for you"
         return await event.answer(text, cache_time=0, alert=True)
-    text = """📬 𝗩𝗮 𝗯𝗲𝗻𝗲, la tua richiesta è stata 𝗿𝗲𝗴𝗶𝘀𝘁𝗿𝗮𝘁𝗮, non scrivere più o verrai 𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 𝙖𝙪𝙩𝙤𝙢𝙖𝙩𝙞𝙘𝙖𝙢𝙚𝙣𝙩𝙚 \
-al momento sono 𝗼𝗰𝗰𝘂𝗽𝗮𝘁𝗼, appena sarò disponibile 𝘃𝗲𝗿𝗿𝗮𝗶 𝗰𝗼𝗻𝘁𝗮𝘁𝘁𝗮𝘁𝗼 e potrai dirmi ciò che vuoi.\n\n__Ovviamente qualcosa di sensato...__"""
+    text = """📬 𝗩𝗮 𝗯𝗲𝗻𝗲, la tua richiesta è stata 𝗿𝗲𝗴𝗶𝘀𝘁𝗿𝗮𝘁𝗮, \
+non scrivere più o verrai 𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 𝙖𝙪𝙩𝙤𝙢𝙖𝙩𝙞𝙘𝙖𝙢𝙚𝙣𝙩𝙚 \
+al momento sono 𝗼𝗰𝗰𝘂𝗽𝗮𝘁𝗼, appena sarò disponibile \
+𝘃𝗲𝗿𝗿𝗮𝗶 𝗰𝗼𝗻𝘁𝗮𝘁𝘁𝗮𝘁𝗼 e potrai dirmi ciò \
+che vuoi.\n\n__Ovviamente qualcosa \
+di sensato...__"""
     sqllist.add_to_list("pmenquire", event.query.user_id)
     try:
         PM_WARNS = sql.get_collection("pmwarns").json
@@ -527,8 +548,12 @@ async def on_plug_in_callback_query_handler(event):
     if event.query.user_id == event.client.uid:
         text = "Idoit this options for user who messages you. not for you"
         return await event.answer(text, cache_time=0, alert=True)
-    text = """📬 𝗩𝗮 𝗯𝗲𝗻𝗲, la tua richiesta è stata 𝗿𝗲𝗴𝗶𝘀𝘁𝗿𝗮𝘁𝗮, non scrivere più o verrai 𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 𝙖𝙪𝙩𝙤𝙢𝙖𝙩𝙞𝙘𝙖𝙢𝙚𝙣𝙩𝙚 \
-al momento sono 𝗼𝗰𝗰𝘂𝗽𝗮𝘁𝗼, appena sarò disponibile 𝘃𝗲𝗿𝗿𝗮𝗶 𝗰𝗼𝗻𝘁𝗮𝘁𝘁𝗮𝘁𝗼 e potrai dirmi ciò che vuoi.\n\n__Ovviamente qualcosa di sensato...__"""
+    text = """📬 𝗩𝗮 𝗯𝗲𝗻𝗲, la tua richiesta è stata 𝗿𝗲𝗴𝗶𝘀𝘁𝗿𝗮𝘁𝗮, \
+non scrivere più o verrai 𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 𝙖𝙪𝙩𝙤𝙢𝙖𝙩𝙞𝙘𝙖𝙢𝙚𝙣𝙩𝙚 \
+al momento sono 𝗼𝗰𝗰𝘂𝗽𝗮𝘁𝗼, appena sarò disponibile \
+𝘃𝗲𝗿𝗿𝗮𝗶 𝗰𝗼𝗻𝘁𝗮𝘁𝘁𝗮𝘁𝗼 e potrai dirmi ciò \
+che vuoi.\n\n__Ovviamente qualcosa \
+di sensato...__"""
     sqllist.add_to_list("pmrequest", event.query.user_id)
     try:
         PM_WARNS = sql.get_collection("pmwarns").json
@@ -545,10 +570,14 @@ al momento sono 𝗼𝗰𝗰𝘂𝗽𝗮𝘁𝗼, appena sarò disponibile 𝘃�
 @catub.tgbot.on(CallbackQuery(data=re.compile(rb"to_chat_with_my_master")))
 async def on_plug_in_callback_query_handler(event):
     if event.query.user_id == event.client.uid:
-        text = "Coglione queste opzioni non sono per te, sono per chi ti scrive."
+        text = "Idoit this options for user who messages you. not for you"
         return await event.answer(text, cache_time=0, alert=True)
-    text = """📬 𝗩𝗮 𝗯𝗲𝗻𝗲, la tua richiesta è stata 𝗿𝗲𝗴𝗶𝘀𝘁𝗿𝗮𝘁𝗮, non scrivere più o verrai 𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 𝙖𝙪𝙩𝙤𝙢𝙖𝙩𝙞𝙘𝙖𝙢𝙚𝙣𝙩𝙚 \
-al momento sono 𝗼𝗰𝗰𝘂𝗽𝗮𝘁𝗼, appena sarò disponibile 𝘃𝗲𝗿𝗿𝗮𝗶 𝗰𝗼𝗻𝘁𝗮𝘁𝘁𝗮𝘁𝗼 e potrai dirmi ciò che vuoi.\n\n__Ovviamente qualcosa di sensato...__"""
+    text = """📬 𝗩𝗮 𝗯𝗲𝗻𝗲, la tua richiesta è stata 𝗿𝗲𝗴𝗶𝘀𝘁𝗿𝗮𝘁𝗮, \
+non scrivere più o verrai 𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 𝙖𝙪𝙩𝙤𝙢𝙖𝙩𝙞𝙘𝙖𝙢𝙚𝙣𝙩𝙚 \
+al momento sono 𝗼𝗰𝗰𝘂𝗽𝗮𝘁𝗼, appena sarò disponibile \
+𝘃𝗲𝗿𝗿𝗮𝗶 𝗰𝗼𝗻𝘁𝗮𝘁𝘁𝗮𝘁𝗼 e potrai dirmi ciò \
+che vuoi.\n\n__Ovviamente qualcosa \
+di sensato...__"""
     sqllist.add_to_list("pmchat", event.query.user_id)
     try:
         PM_WARNS = sql.get_collection("pmwarns").json
@@ -565,7 +594,7 @@ al momento sono 𝗼𝗰𝗰𝘂𝗽𝗮𝘁𝗼, appena sarò disponibile 𝘃�
 @catub.tgbot.on(CallbackQuery(data=re.compile(rb"to_spam_my_master_inbox")))
 async def on_plug_in_callback_query_handler(event):
     if event.query.user_id == event.client.uid:
-        text = "Coglione queste opzioni non sono per te, sono per chi ti scrive."
+        text = "Idoit this options for user who messages you. not for you"
         return await event.answer(text, cache_time=0, alert=True)
     text = "`███████▄▄███████████▄\
          \n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\
