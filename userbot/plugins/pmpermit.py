@@ -205,7 +205,8 @@ async def do_pm_options_action(event, chat):
     sql.add_collection("pmmessagecache", PMMESSAGE_CACHE, {})
     USER_BOT_WARN_ZERO = f"ㅤㅤㅤ  ㅤㅤㅤ🚫 𝗕𝗟𝗢𝗖𝗖𝗔𝗧𝗢 🚫 \
 Sei stato 𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 𝗮𝘂𝘁𝗼𝗺𝗮𝘁𝗶𝗰𝗮𝗺𝗲𝗻𝘁𝗲, appena verrai 𝗻𝗼𝘁𝗮𝘁𝗼,  \
-se verrà ritenuto 𝙣𝙚𝙘𝙚𝙨𝙨𝙖𝙧𝙞𝙤, verrai 𝘀𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 e 𝗰𝗼𝗻𝘁𝗮𝘁𝘁𝗮𝘁𝗼, nel frattempo potresti finire di 𝗯𝗲𝗿𝗲 il tuo 𝘀𝘂𝗰𝗰𝗼, va bene? 🧃"
+se verrà ritenuto 𝙣𝙚𝙘𝙚𝙨𝙨𝙖𝙧𝙞𝙤, verrai 𝘀𝗯𝗹𝗼𝗰𝗰𝗮𝘁𝗼 e 𝗰𝗼𝗻𝘁𝗮𝘁𝘁𝗮𝘁𝗼, \ 
+nel frattempo potresti finire di 𝗯𝗲𝗿𝗲 il tuo 𝘀𝘂𝗰𝗰𝗼, va bene? 🧃"
     await event.reply(USER_BOT_WARN_ZERO)
     await event.client(functions.contacts.BlockRequest(chat.id))
     the_message = f"#BLOCKED_PM\
